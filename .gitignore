@@ -1,0 +1,9 @@
+_pycache__
+*.py[cod]
+.DS_Store
+.AppleDouble
+.LSOverride
+.vscode
+*.crt
+*.key
+*.pem

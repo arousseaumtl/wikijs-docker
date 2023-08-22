@@ -1,0 +1,96 @@
+title: WikiJS
+lang: en
+langRtl: false
+public: false
+port: "$(APP_PORT)""
+
+paths:
+  repo: ./repo
+  data: ./data
+
+uploads:
+  maxImageFileSize: 3
+  maxOtherFileSize: 100
+
+auth:
+  defaultReadAccess: false
+  local:
+    enabled: true
+  google:
+    enabled: true
+    clientId: GOOGLE_CLIENT_ID
+    clientSecret: GOOGLE_CLIENT_SECRET
+  microsoft:
+    enabled: true
+    clientId: MS_APP_ID
+    clientSecret: MS_APP_SECRET
+  facebook:
+    enabled: false
+    clientId: FACEBOOK_APP_ID
+    clientSecret: FACEBOOK_APP_SECRET
+  github:
+    enabled: false
+    clientId: GITHUB_CLIENT_ID
+    clientSecret: GITHUB_CLIENT_SECRET
+  slack:
+    enabled: false
+    clientId: "SLACK_CLIENT_ID"
+    clientSecret: "SLACK_CLIENT_SECRET"
+  ldap:
+    enabled: false
+    url: ldap://serverhost:389
+    bindDn: cn='root'
+    bindCredentials: BIND_PASSWORD
+    searchBase: o=users,o=example.com
+    searchFilter: (uid={{username}})
+    tlsEnabled: false
+    tlsCertPath: C:\example\root_ca_cert.crt
+  azure:
+    enabled: false
+    clientId: APP_ID
+    clientSecret: APP_SECRET_KEY
+    resource: "00000002-0000-0000-c000-000000000000"
+    tenant: "YOUR_TENANT.onmicrosoft.com"
+
+sessionSecret: a84jr7j30w7b0p8j25758sn2i920cf9mg0r932on3bh27d6c0
+
+git:
+  url: https://github.com/Organization/Repo
+  branch: master
+  auth:
+    type: ssh
+    username: admin
+    password: admin
+    privateKey: /etc/wiki/keys/git.pem
+    sslVerify: true
+  serverEmail: admin@example.com
+  showUserEmail: true
+
+features:
+  linebreaks: true
+  mathjax: true
+
+externalLogging:
+  bugsnag: false
+  loggly: false
+  papertrail: false
+  rollbar: false
+  sentry: false
+
+theme:
+  primary: indigo
+  alt: blue-grey
+  viewSource: all
+  footer: blue-grey
+  code:
+    dark: true
+    colorize: true
+
+db:
+  type: "$(DB_TYPE)"
+  host: "$(DB_HOST)"
+  port: "$(DB_PORT)"
+  ssl: false
+  user: "$(DB_USER)"
+  pass: "$(DB_PASS)"
+  db: "$(DB_NAME)"

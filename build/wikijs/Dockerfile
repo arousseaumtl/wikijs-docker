@@ -19,7 +19,6 @@ RUN curl -sL https://github.com/Requarks/wiki/releases/latest/download/wiki-js.t
         -o wiki-js.tar.gz \
     && tar xzf wiki-js.tar.gz
 
-COPY config/config.yml .
-COPY config/supervisord.conf /etc/supervisord.conf
+COPY config/* ./
 
-ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+ENTRYPOINT ["/usr/bin/supervisord", "-c", "supervisord.conf"]
