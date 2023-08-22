@@ -21,4 +21,6 @@ RUN curl -sL https://github.com/Requarks/wiki/releases/latest/download/wiki-js.t
 
 COPY config/* ./
 
+EXPOSE 80
+
 ENTRYPOINT ["/usr/bin/supervisord", "-c", "supervisord.conf"]
